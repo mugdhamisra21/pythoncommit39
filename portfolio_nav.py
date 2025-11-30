@@ -47,7 +47,7 @@ prices = {
 # Remove PFE from prices
 prices.pop("PFE", None)
 
-total_NAV = Decimal(0)
+total_nav = Decimal(0)
 scale = 2
 
 for ticker, shares in portfolio.items():
@@ -55,9 +55,9 @@ for ticker, shares in portfolio.items():
     if price_str is not None:
         price = Decimal(price_str)
         value = price * Decimal(shares)
-        total_NAV += value
+        total_nav += value
 
-# Set scale and rounding
-total_NAV = total_NAV.quantize(Decimal(10) ** -scale, rounding=ROUND_HALF_UP)
+# Set scale
+total_nav = total_nav.quantize(Decimal(10) ** -scale, rounding=ROUND_HALF_UP)
 
-print(f"NAV for today is : ${total_NAV}")
+print(f"NAV for today is : ${total_nav}")
