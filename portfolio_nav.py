@@ -52,7 +52,4 @@ for ticker, shares in portfolio.items():
     if price is not None:
         total_nav += price * shares
 
-# Format total NAV to 2 decimal places
-total_nav = round(total_nav, 2)
-
-print(f'NAV for today is : ${total_nav}')
+print(f'NAV for today is: ${total_nav:.2f}')
